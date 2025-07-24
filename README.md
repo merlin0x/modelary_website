@@ -1,2 +1,3 @@
-# modelary_website
-WebSite for Modelary
+© 2025 [Yevhen Shcherbyna/Modelary]. All rights reserved.
+Цей код є приватною власністю. Заборонено копіювання, 
+розповсюдження або модифікація без письмового дозволу.
