@@ -11,12 +11,18 @@
             box-sizing: border-box;
         }
 
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #000000;
             color: #ffffff;
-            min-height: 100vh;
-            overflow-x: hidden;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
 
         /* Animated gradient background */
@@ -41,54 +47,59 @@
         .orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.5;
+            filter: blur(80px);
+            opacity: 0.4;
             animation: float 20s infinite ease-in-out;
         }
 
         .orb1 {
-            width: 600px;
-            height: 600px;
+            width: 400px;
+            height: 400px;
             background: radial-gradient(circle, #ffcc00 0%, transparent 70%);
-            top: -300px;
-            right: -300px;
+            top: -200px;
+            right: -200px;
         }
 
         .orb2 {
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
             background: radial-gradient(circle, #ff6600 0%, transparent 70%);
-            bottom: -200px;
-            left: -200px;
+            bottom: -150px;
+            left: -150px;
             animation-delay: -5s;
         }
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(50px, -50px) scale(1.1); }
-            50% { transform: translate(-30px, 30px) scale(0.9); }
-            75% { transform: translate(30px, 50px) scale(1.05); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 30px) scale(1.02); }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
             text-align: center;
             position: relative;
             z-index: 1;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* Logo section */
         .logo-container {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             animation: fadeInDown 1s ease-out;
+            margin: 0 auto 40px auto;
         }
 
         .logo-image {
-            max-width: 300px;
+            max-width: 250px;
             height: auto;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(255, 204, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -103,7 +114,7 @@
             font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 900;
             letter-spacing: -2px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             background: linear-gradient(135deg, #ffcc00 0%, #ff9500 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -111,10 +122,20 @@
             text-shadow: 0 0 40px rgba(255, 204, 0, 0.5);
         }
 
+        .slogan {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: #ffcc00;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
         .tagline {
-            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
             color: #cccccc;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             line-height: 1.6;
             font-weight: 300;
             animation: fadeInUp 1s ease-out 0.3s both;
@@ -126,8 +147,8 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 50px;
+            padding: 30px;
+            margin-bottom: 30px;
             animation: fadeInUp 1s ease-out 0.6s both;
             transition: all 0.3s ease;
         }
@@ -139,16 +160,16 @@
         }
 
         .coming-soon h2 {
-            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
             color: #ffcc00;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 700;
             letter-spacing: 2px;
         }
 
         .coming-soon p {
             color: #aaaaaa;
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 0;
         }
 
@@ -158,17 +179,17 @@
         }
 
         .contact-label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #888888;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .email-link {
             color: #ffcc00;
             text-decoration: none;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 500;
             transition: all 0.3s ease;
             display: inline-block;
@@ -222,14 +243,14 @@
         .loading-dots {
             display: inline-flex;
             margin-left: 10px;
+            gap: 2px;
         }
 
         .loading-dots span {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background: #ffcc00;
             border-radius: 50%;
-            margin: 0 3px;
             animation: bounce 1.4s infinite ease-in-out both;
         }
 
@@ -250,15 +271,15 @@
         /* Responsive */
         @media (max-width: 768px) {
             .container {
-                padding: 40px 20px;
+                padding: 30px 20px;
             }
 
             .logo-image {
-                max-width: 200px;
+                max-width: 180px;
             }
 
             .coming-soon {
-                padding: 30px 20px;
+                padding: 25px 20px;
             }
 
             h1 {
@@ -268,19 +289,82 @@
 
         @media (max-width: 480px) {
             .container {
-                padding: 30px 15px;
+                padding: 20px 15px;
             }
 
             .logo-image {
-                max-width: 150px;
+                max-width: 130px;
             }
 
             .coming-soon {
-                padding: 25px 15px;
+                padding: 20px 15px;
+                margin-bottom: 20px;
             }
 
             .email-link {
+                font-size: 1rem;
+            }
+            
+            .loading-dots span {
+                width: 5px;
+                height: 5px;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .logo-image {
+                max-width: 180px;
+                margin-bottom: 15px;
+            }
+            
+            .coming-soon {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            h1 {
+                margin-bottom: 5px;
+            }
+            
+            .slogan {
+                margin-bottom: 10px;
                 font-size: 1.1rem;
+            }
+            
+            .tagline {
+                margin-bottom: 25px;
+            }
+        }
+
+        @media (max-height: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .logo-image {
+                max-width: 120px;
+                margin-bottom: 10px;
+            }
+            
+            h1 {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+            
+            .slogan {
+                font-size: 0.9rem;
+            }
+            
+            .tagline {
+                font-size: 0.85rem;
+                margin-bottom: 20px;
+            }
+            
+            .coming-soon {
+                padding: 15px;
+            }
+            
+            .coming-soon h2 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -296,6 +380,7 @@
         <div class="logo-container">
             <img src="545c3c21-f80e-45ac-b365-b68b0120cb83.jpg" alt="Modelary Logo" class="logo-image">
             <h1>MODELARY</h1>
+            <p class="slogan">Where Your Models Come to Life</p>
             <p class="tagline">A platform for working with and studying complex systems</p>
         </div>
 
